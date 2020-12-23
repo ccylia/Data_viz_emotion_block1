@@ -10,12 +10,12 @@ import base64
 image_filename5 = '/home/cecilia/Documents/brief/brief_emotions/emotion_dash/apps/ms-icon.png'
 encoded_image5 = base64.b64encode(open(image_filename5, 'rb').read())
 
+#style={'backgroundColor': '#16ed5e'} , a mettre entre le 1 er div et le 1 er children
 
-
-layout = html.Div(children=[
-    html.Div(children=[
-        html.H1(
-            children='Roue des Emotions',
+layout= html.Div(children=[
+            html.Div(children=[
+            html.H1(
+                children='Roue des Emotions',
             style={
                 'textAlign': 'center',
                 'color' : '#7FDBFF'
@@ -60,8 +60,8 @@ Prédire les nouvelles émotions présentes dans ce jeu de données sur les mess
  Vous pourrez par exemple présenter les données "brut" sous la forme d'un tableau puis les données pré-traitées dans le même tableau avec un bouton ou menu déroulant permettant de passer d'un type de données à un autre (n'afficher qu'un échantillon des résultats, on dans une fenêtre "scrollable"). Sur cette première page de dashboard seront accessibles vos graphiques ayant trait à votre première analyse de données (histogramme, bubble chart, scatterplot etc), notamment
 
 
-    1-L'histogramme représentant la fréquence d’apparition des mots (commenter)
-    2-L'histogramme des émotions (commenter)
+    1- histogramme représentant la fréquence d’apparition des mots (commenter)
+    2- histogramme des émotions (commenter)
 
 
 

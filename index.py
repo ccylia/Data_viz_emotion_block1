@@ -12,7 +12,7 @@ import dash_bootstrap_components as dbc
 import base64
 
 from app import app
-from apps import app1, app2, home, test
+from apps import app1, app2, home#, test
 
 
 colors = {
@@ -37,8 +37,8 @@ app.layout = html.Div([
     html.Br(),
     dcc.Link('Page 2', href='/apps/app2'),
     html.Br(),
-    dcc.Link('test', href='/apps/test'),
-    html.Br(),
+    #dcc.Link('test', href='/apps/test'),
+   # html.Br(),
 
 
     # content will be rendered in this element
@@ -75,8 +75,8 @@ def display_page(pathname):
         return app1.layout
     elif pathname == '/apps/app2':
         return app2.layout
-    elif pathname == '/apps/test':
-            return test.layout   
+    #elif pathname == '/apps/test':
+            #return test.layout   
     else:
         return ''
 

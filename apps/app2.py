@@ -40,7 +40,7 @@ encoded_image4 = base64.b64encode(open(image_filename4, 'rb').read())
 layout = html.Div(children=[
     html.Div(children=[
         html.H1(
-            children='Résultats des classifications',
+            children='Résultats des classifieurs fichier 1',
             style={
                 'textAlign': 'center',
                 }
@@ -107,10 +107,18 @@ layout = html.Div(children=[
         
         dcc.Markdown(
                        '''### Interprétation des Résultats
-            blablablablabla
-            **1. blabla**
+           
+            1. countvectorizer, tfidf, stopwords, lematization et stemization
+               le f1 score qui tend le plus vers 1 est celui du svm lineaire en pondéré il est encore plus élévé ce qui nous montre qu une amelioration est possible.
 
-            **2. blabla**'''
+            2. countvectorizer et le modèle
+                le f1 score qui tend le plus vers 1 est celui du svm lineaire mais en ponderant le modèle logit devient plus performant.
+
+            3. countvectorizer et stopwords
+                les résultat sont identique à celui du dessus sauf pour le  'decision_tree' qui obtient une très légère difference en faveur du  précédent.
+           
+            
+            '''
      )]),
 
 #titre courbe precision et recall
@@ -150,11 +158,20 @@ layout = html.Div(children=[
     html.Div(children=[
         
         dcc.Markdown(
-                       '''### Interprétation des Résultats
-            blablablablabla
-            **1. blabla**
+                       '''### Interprétation des Résultats courbe roc et precision,recall pour le logit du 1er tableau des classifieurs.
+            
+            1.  roc: 
+                le classificateur commence sa prédiction sans faut positif mais au fur et à mesure de l'entrainement du modèle la courbe tend vers du toujours  'positif'. 
 
-            **2. blabla**'''
+            2. precision et recall:
+                Le rappel est défini par le nombre d'émotions pertinentes retrouvées au regard du nombre d'émotions pertinentes que possède la base de données.
+
+                La précision est le nombre d'émotions pertinentes retrouvées rapporté au nombre d'émotions total proposé pour une requête donnée.
+
+                on constate que les courbes tendent vers (1,1) avec une certaines difficulté pour la 'surprise'.
+
+            
+            '''
      )])
 
 
